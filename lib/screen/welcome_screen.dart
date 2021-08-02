@@ -1,28 +1,25 @@
+import 'package:digitatravelmoney/screen/setting_tab_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:digitatravelmoney/screen/home_tab_screen.dart';
+import 'package:digitatravelmoney/screen/offers_tab_screen.dart';
+import 'package:digitatravelmoney/Widget/bottom_nav_widget.dart';
 
-class home extends StatefulWidget {
-  home({Key? key}) : super(key: key);
+class welcomeScreen extends StatefulWidget {
+  welcomeScreen({Key? key}) : super(key: key);
 
   @override
-  _homeState createState() => _homeState();
+  _welcomeScreenState createState() => _welcomeScreenState();
 }
 
-class _homeState extends State<home> {
+class _welcomeScreenState extends State<welcomeScreen> {
   int _selectedIndex = 0;
   bool home_button = true, offers_button = false, setting_button = false;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Home',
-    ),
-    Text(
-      'offers',
-    ),
-    Text(
-      'settings',
-    ),
+  static List<Widget> _widgetOptions = <Widget>[
+    hometabScreen(),
+    offerstabScreen(),
+    settingstabScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -45,9 +42,9 @@ class _homeState extends State<home> {
                     setting_button = false;
                   });
                 },
-                child: bottom_navigation_btn(
+                child: bottom_nav_widget(
                   text_btn: 'home',
-                  icon_btn: Icons.home,
+                  icon_btn: 'images/home/home.png',
                   select_value: home_button,
                 ),
               ),
@@ -61,9 +58,9 @@ class _homeState extends State<home> {
                     setting_button = false;
                   });
                 },
-                child: bottom_navigation_btn(
+                child: bottom_nav_widget(
                   text_btn: 'offers',
-                  icon_btn: Icons.card_giftcard,
+                  icon_btn: 'images/home/offers.png',
                   select_value: offers_button,
                 ),
               ),
@@ -77,57 +74,15 @@ class _homeState extends State<home> {
                     setting_button = true;
                   });
                 },
-                child: bottom_navigation_btn(
+                child: bottom_nav_widget(
                   text_btn: 'Settings',
-                  icon_btn: Icons.settings,
+                  icon_btn: 'images/home/settings.png',
                   select_value: setting_button,
                 ),
               ),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class bottom_navigation_btn extends StatelessWidget {
-  const bottom_navigation_btn({
-    Key? key,
-    required this.text_btn,
-    required this.icon_btn,
-    required this.select_value,
-  }) : super(key: key);
-
-  final String text_btn;
-  final IconData icon_btn;
-  final bool select_value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 105,
-      height: 28,
-      decoration: BoxDecoration(
-        color: select_value ? Color(0xff0066cc) : Color(0xfff5f5f7),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            icon_btn,
-            color: select_value ? Colors.white : Color(0xff1c1d22),
-            size: 14,
-          ),
-          SizedBox(width: 5),
-          Text(
-            text_btn,
-            style: TextStyle(
-                color: select_value ? Colors.white : Color(0xff1c1d22),
-                fontSize: 10),
-          ),
-        ],
       ),
     );
   }
