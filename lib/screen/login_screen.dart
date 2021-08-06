@@ -28,10 +28,9 @@ class login_Screen extends StatelessWidget {
                 ),
                 Text_Widget(
                   text: "Get started by Logging in!",
-                  text_height: 25,
-                  text_width: 234,
                   font_size: 18,
                   colour: Color(0xff1c1d22),
+                  font_family: 'Poppins-Regular',
                 ),
                 SizedBox(
                   height: 118,
@@ -41,11 +40,11 @@ class login_Screen extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text_Widget(
-                        text: 'CUSTOMER ID',
-                        text_height: 14,
-                        text_width: 57,
-                        font_size: 10,
-                        colour: Color(0xff9d9da9)),
+                      text: 'CUSTOMER ID',
+                      font_size: 10,
+                      colour: Color(0xff9d9da9),
+                      font_family: 'Poppins-Medium',
+                    ),
                   ),
                 ),
                 SizedBox(height: 10),
@@ -77,11 +76,11 @@ class login_Screen extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text_Widget(
-                        text: 'PASSWORD',
-                        text_height: 14,
-                        text_width: 57,
-                        font_size: 10,
-                        colour: Color(0xff9d9da9)),
+                      text: 'PASSWORD',
+                      font_size: 10,
+                      colour: Color(0xff9d9da9),
+                      font_family: 'Poppins-Medium',
+                    ),
                   ),
                 ),
                 SizedBox(height: 10),
@@ -117,10 +116,9 @@ class login_Screen extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: Text_Widget(
                     text: 'Set/Forgot Password?',
-                    text_height: 19,
-                    text_width: 144,
                     font_size: 13,
                     colour: Color(0xff1c1d22),
+                    font_family: 'Poppins-Medium',
                   ),
                 ),
                 SizedBox(height: 30),
@@ -139,11 +137,13 @@ class login_Screen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Center(
-                        child: Text(
-                      "Login",
-                      style: TextStyle(
-                          color: Colors.white, fontFamily: 'Poppins-SemiBold'),
-                    )),
+                      child: Text_Widget(
+                        text: "Login",
+                        font_size: 12,
+                        colour: Colors.white,
+                        font_family: 'Poppins-SemiBold',
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(height: 20),

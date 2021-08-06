@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:digitatravelmoney/screen/app_lock_options_screen.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class applockScreen extends StatelessWidget {
   const applockScreen({Key? key}) : super(key: key);
@@ -10,6 +11,11 @@ class applockScreen extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(62.0),
         child: AppBar(
+          leading: Icon(
+            FontAwesomeIcons.chevronLeft,
+            color: Colors.white,
+            size: 16,
+          ),
           centerTitle: true,
           backgroundColor: Color(0xff1c1d22),
           title: Text(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:digitatravelmoney/Widget/radio_btn_widget.dart';
+import 'package:digitatravelmoney/Widget/text_widget.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class applockoptionScreen extends StatefulWidget {
   @override
@@ -12,18 +14,20 @@ class _applockoptionScreenState extends State<applockoptionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(62.0),
-        child: AppBar(
-          centerTitle: true,
-          backgroundColor: Color(0xff1c1d22),
-          title: Text(
-            "preferred screen lock",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 12,
-              fontFamily: 'Poppins-Regular',
-            ),
+      appBar: AppBar(
+        leading: Icon(
+          FontAwesomeIcons.chevronLeft,
+          color: Colors.white,
+          size: 16,
+        ),
+        centerTitle: true,
+        backgroundColor: Color(0xff1c1d22),
+        title: Text(
+          "preferred screen lock",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 12,
+            fontFamily: 'Poppins-Regular',
           ),
         ),
       ),
@@ -105,7 +109,19 @@ class _applockoptionScreenState extends State<applockoptionScreen> {
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
                   children: [
-                    Row(),
+                    Row(
+                      children: [
+                        Image.asset('images/home/tab_1/important.png'),
+                        SizedBox(width: 10),
+                        Text_Widget(
+                          text: "Note",
+                          font_size: 14,
+                          colour: Color(0xff1c1d22),
+                          font_family: 'Poppins-Regular',
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 7),
                     Text(
                       "Please note that if you choose Fingerprint or Face Unlock, it would make use of your system default biometric lock options.",
                       style: TextStyle(

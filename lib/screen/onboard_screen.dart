@@ -25,20 +25,18 @@ class onboardScreen extends StatelessWidget {
             ),
             Text_Widget(
               text: "Get started by Logging in!",
-              text_height: 25,
-              text_width: 234,
               font_size: 18,
               colour: Color(0xff1c1d22),
+              font_family: 'Poppins-Regular',
             ),
             SizedBox(
               height: 91,
             ),
             Text_Widget(
               text: "FINGERPRINT UNLOCK",
-              text_height: 14,
-              text_width: 106,
               font_size: 10,
               colour: Color(0xff9d9da9),
+              font_family: 'Poppins-Medium',
             ),
             SizedBox(
               height: 10,
@@ -70,10 +68,9 @@ class onboardScreen extends StatelessWidget {
             ),
             Text_Widget(
               text: "or",
-              text_height: 19,
-              text_width: 14,
               font_size: 13,
               colour: Color(0xff616267),
+              font_family: 'Poppins-Regular',
             ),
             SizedBox(
               height: 20,
@@ -85,10 +82,9 @@ class onboardScreen extends StatelessWidget {
               },
               child: Text_Widget(
                 text: "Login with Customer ID",
-                text_height: 19,
-                text_width: 152,
                 font_size: 13,
                 colour: Color(0xff1c1d22),
+                font_family: 'Poppins-Medium',
               ),
             ),
             SizedBox(

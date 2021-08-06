@@ -26,10 +26,9 @@ class pinverificationScreen extends StatelessWidget {
                 SizedBox(height: 30),
                 Text_Widget(
                   text: "Welcome aboard!",
-                  text_height: 25,
-                  text_width: 234,
                   font_size: 18,
                   colour: Color(0xff1c1d22),
+                  font_family: 'Poppins-Regular',
                 ),
                 SizedBox(
                   height: 71,
@@ -39,11 +38,11 @@ class pinverificationScreen extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text_Widget(
-                        text: 'LOGIN PIN',
-                        text_height: 14,
-                        text_width: 49,
-                        font_size: 10,
-                        colour: Color(0xff9d9da9)),
+                      text: 'LOGIN PIN',
+                      font_size: 10,
+                      colour: Color(0xff9d9da9),
+                      font_family: 'Poppins-Medium',
+                    ),
                   ),
                 ),
                 SizedBox(height: 10),
@@ -86,12 +85,11 @@ class pinverificationScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Center(
-                      child: Text(
-                        "Login",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Poppins-SemiBold',
-                        ),
+                      child: Text_Widget(
+                        text: "Login",
+                        font_size: 12,
+                        colour: Colors.white,
+                        font_family: 'Poppins-SemiBold',
                       ),
                     ),
                   ),
@@ -101,10 +99,9 @@ class pinverificationScreen extends StatelessWidget {
                   onTap: () {},
                   child: Text_Widget(
                     text: "forgot PIN?",
-                    text_height: 17,
-                    text_width: 67,
                     font_size: 12,
                     colour: Color(0xff616267),
+                    font_family: 'Poppins-SemiBold',
                   ),
                 ),
                 SizedBox(height: 10),

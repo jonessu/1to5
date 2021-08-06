@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:digitatravelmoney/Widget/text_widget.dart';
 
 class offers_card_widget extends StatelessWidget {
   const offers_card_widget({
@@ -28,20 +29,21 @@ class offers_card_widget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                title,
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Color(0xff1c1d22),
-                ),
+              Text_Widget(
+                text: title,
+                font_size: 16,
+                colour: Color(0xff1c1d22),
+                font_family: 'Poppins-Medium',
               ),
               SizedBox(height: 5),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(
-                    sub_text,
-                    style: TextStyle(color: Color(0xff616267), fontSize: 13),
+                  Text_Widget(
+                    text: sub_text,
+                    font_size: 13,
+                    colour: Color(0xff616267),
+                    font_family: 'Poppins-SemiBold',
                   ),
                   SizedBox(width: 10),
                   Image.asset(

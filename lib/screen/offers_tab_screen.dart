@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:digitatravelmoney/Widget/offers_card_widget.dart';
+import 'package:digitatravelmoney/Widget/text_widget.dart';
+import 'package:digitatravelmoney/screen/menu_screen.dart';
+import 'package:digitatravelmoney/screen/offers_innerpage_screen.dart';
 
 class offerstabScreen extends StatefulWidget {
   const offerstabScreen({
@@ -27,7 +30,33 @@ class _offerstabScreenState extends State<offerstabScreen> {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
-                SizedBox(height: 65),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text_Widget(
+                      text: "offers",
+                      font_size: 12,
+                      font_family: 'Poppins-Regular',
+                      colour: Colors.white,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => menuScreen(),
+                          ),
+                        );
+                      },
+                      child: Icon(
+                        Icons.menu,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 15),
                 Container(
                   width: double.infinity,
                   height: 38,
@@ -40,12 +69,11 @@ class _offerstabScreenState extends State<offerstabScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          "search",
-                          style: TextStyle(
-                            color: Color(0xff616267),
-                            fontSize: 12,
-                          ),
+                        Text_Widget(
+                          text: "search",
+                          font_size: 12,
+                          font_family: 'Poppins-Medium',
+                          colour: Color(0xff616267),
                         ),
                         Icon(Icons.search),
                       ],
@@ -56,11 +84,20 @@ class _offerstabScreenState extends State<offerstabScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "showing all new offers",
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.white,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => offersinnerpageScreen(),
+                          ),
+                        );
+                      },
+                      child: Text_Widget(
+                        text: "showing all new offers",
+                        font_size: 12,
+                        font_family: 'Poppins-Regular',
+                        colour: Colors.white,
                       ),
                     ),
                     GestureDetector(
@@ -74,12 +111,11 @@ class _offerstabScreenState extends State<offerstabScreen> {
                       },
                       child: Row(
                         children: [
-                          Text(
-                            "sort & filter",
-                            style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.white,
-                                fontFamily: 'Poppins-Bold'),
+                          Text_Widget(
+                            text: "sort & filter",
+                            font_size: 14,
+                            font_family: 'Poppins-Bold',
+                            colour: Colors.white,
                           ),
                           SizedBox(width: 10),
                           Image.asset(

@@ -26,7 +26,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_switch: ^0.3.2
   font_awesome_flutter: ^9.1.0
+  geolocator: ^7.4.0
+  google_maps_flutter: ^2.0.6
   google_nav_bar: ^5.0.5
+  provider: ^5.0.0
+  webview_flutter: ^2.0.10
 
 dev_dependencies:
   flutter_test:

@@ -14,8 +14,6 @@ class welcomeScreen extends StatefulWidget {
 class _welcomeScreenState extends State<welcomeScreen> {
   int _selectedIndex = 0;
   bool home_button = true, offers_button = false, setting_button = false;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
   static List<Widget> _widgetOptions = <Widget>[
     hometabScreen(),
     offerstabScreen(),
