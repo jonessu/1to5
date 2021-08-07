@@ -24,10 +24,23 @@ class _loadingScreenState extends State<loadingScreen> {
           onPressed: () async {
             Timer timer;
             int dot_value = 0;
+            bool first_dot = true, second_dot = false, third_dot = false;
             timer = Timer.periodic(Duration(milliseconds: 10), (timer) {
               setState(() {
-                dot_value += 1;
-                print(dot_value);
+                dot_value++;
+                if (dot_value % 3 == 0) {
+                  first_dot = true;
+                  second_dot = false;
+                  third_dot = false;
+                } else if (dot_value % 3 == 1) {
+                  first_dot = false;
+                  second_dot = true;
+                  third_dot = false;
+                } else {
+                  first_dot = false;
+                  second_dot = false;
+                  third_dot = true;
+                }
               });
             });
             Timer(Duration(seconds: 3), () {
@@ -60,9 +73,9 @@ class _loadingScreenState extends State<loadingScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          slide_dot(dot_value: dot_value + 0),
-                          slide_dot(dot_value: dot_value + 1),
-                          slide_dot(dot_value: dot_value + 2),
+                          custom_line_dot(dot_value: first_dot),
+                          custom_line_dot(dot_value: second_dot),
+                          custom_line_dot(dot_value: third_dot),
                         ],
                       )
                     ],
@@ -78,23 +91,22 @@ class _loadingScreenState extends State<loadingScreen> {
   }
 }
 
-class slide_dot extends StatelessWidget {
-  const slide_dot({
-    required this.dot_value,
+class custom_line_dot extends StatelessWidget {
+  const custom_line_dot({
     Key? key,
+    required this.dot_value,
   }) : super(key: key);
 
-  final int dot_value;
+  final bool dot_value;
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: Duration(hours: 10),
+    return Container(
       margin: EdgeInsets.symmetric(horizontal: 5),
-      height: dot_value % 3 == 0 ? 5 : 3,
-      width: dot_value % 3 == 0 ? 5 : 3,
+      height: dot_value ? 5 : 3,
+      width: dot_value ? 5 : 3,
       decoration: BoxDecoration(
-        color: dot_value % 3 == 0 ? Color(0xff616267) : Color(0xffb9b9bf),
+        color: dot_value ? Color(0xff616267) : Color(0xffb9b9bf),
         borderRadius: BorderRadius.all(
           Radius.circular(12),
         ),

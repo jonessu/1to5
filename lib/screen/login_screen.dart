@@ -1,9 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:digitatravelmoney/Widget/text_widget.dart';
 import 'package:digitatravelmoney/screen/pin_verification_screen.dart';
+import 'package:digitatravelmoney/screen/welcome_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:digitatravelmoney/controller/authentications.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:email_auth/email_auth.dart';
 
-class login_Screen extends StatelessWidget {
+class login_Screen extends StatefulWidget {
   const login_Screen({Key? key}) : super(key: key);
+
+  @override
+  _login_ScreenState createState() => _login_ScreenState();
+}
+
+class _login_ScreenState extends State<login_Screen> {
+  final _auth = FirebaseAuth.instance;
+  String email = '';
+  String Password = '';
+  final TextEditingController _emailcontroller = TextEditingController();
+  final TextEditingController _passcontroller = TextEditingController();
+
+  void google_login_verification() async {
+    googleSignInmethod().whenComplete(() async {
+      User? user = await FirebaseAuth.instance.currentUser;
+      print(user);
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => welcomeScreen()));
+    });
+  }
+
+  void sendotp() async {
+    EmailAuth.sessionName = "Test Session";
+    var res = await EmailAuth.sendOtp(receiverMail: _emailcontroller.text);
+    if (res) {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (context) =>
+              pinverificationScreen(emailcontroller: _emailcontroller.text)));
+    } else {
+      print("otp not send");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +72,7 @@ class login_Screen extends StatelessWidget {
                   font_family: 'Poppins-Regular',
                 ),
                 SizedBox(
-                  height: 118,
+                  height: 68,
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 10.0),
@@ -62,10 +101,12 @@ class login_Screen extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(15.0),
                     child: TextFormField(
-                      initialValue: "VijaySS",
+                      controller: _emailcontroller,
+                      keyboardType: TextInputType.emailAddress,
                       cursorColor: Colors.black,
                       decoration: InputDecoration(
                         border: InputBorder.none,
+                        hintText: "Enter Email",
                       ),
                     ),
                   ),
@@ -98,11 +139,12 @@ class login_Screen extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(15.0),
                     child: TextFormField(
-                      initialValue: '•••••••••••',
+                      controller: _passcontroller,
                       cursorColor: Colors.black,
                       obscureText: true,
                       decoration: InputDecoration(
                         border: InputBorder.none,
+                        hintText: "Enter Password",
                       ),
                       style: TextStyle(
                         fontSize: 13,
@@ -123,12 +165,7 @@ class login_Screen extends StatelessWidget {
                 ),
                 SizedBox(height: 30),
                 GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => pinverificationScreen()));
-                  },
+                  onTap: sendotp,
                   child: Container(
                     width: double.infinity,
                     height: 42,
@@ -142,6 +179,33 @@ class login_Screen extends StatelessWidget {
                         font_size: 12,
                         colour: Colors.white,
                         font_family: 'Poppins-SemiBold',
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                GestureDetector(
+                  onTap: google_login_verification,
+                  child: Container(
+                    width: double.infinity,
+                    height: 42,
+                    decoration: BoxDecoration(
+                      color: Colors.orangeAccent,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(FontAwesomeIcons.google, color: Colors.white),
+                          SizedBox(width: 5),
+                          Text_Widget(
+                            text: "Sign In With Gmail",
+                            font_size: 12,
+                            colour: Colors.white,
+                            font_family: 'Poppins-SemiBold',
+                          ),
+                        ],
                       ),
                     ),
                   ),

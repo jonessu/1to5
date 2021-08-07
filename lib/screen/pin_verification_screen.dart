@@ -1,9 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:digitatravelmoney/Widget/text_widget.dart';
 import 'package:digitatravelmoney/screen/welcome_screen.dart';
+import 'package:email_auth/email_auth.dart';
 
-class pinverificationScreen extends StatelessWidget {
-  const pinverificationScreen({Key? key}) : super(key: key);
+class pinverificationScreen extends StatefulWidget {
+  pinverificationScreen({Key? key, required this.emailcontroller})
+      : super(key: key);
+
+  final String emailcontroller;
+
+  @override
+  _pinverificationScreenState createState() => _pinverificationScreenState();
+}
+
+class _pinverificationScreenState extends State<pinverificationScreen> {
+  final TextEditingController _otpcontroller = TextEditingController();
+
+  void otpverified() async {
+    var res = await EmailAuth.validate(
+        receiverMail: widget.emailcontroller, userOTP: _otpcontroller.text);
+    if (res) {
+      print("OTP Verified");
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => welcomeScreen()));
+    } else {
+      print("Invalid OTP");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,23 +83,19 @@ class pinverificationScreen extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(15.0),
                     child: TextFormField(
+                      controller: _otpcontroller,
                       keyboardType: TextInputType.number,
-                      initialValue: "",
                       cursorColor: Colors.black,
                       decoration: InputDecoration(
                         border: InputBorder.none,
+                        hintText: "Enter OTP",
                       ),
                     ),
                   ),
                 ),
                 SizedBox(height: 30),
                 GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => welcomeScreen()));
-                  },
+                  onTap: otpverified,
                   child: Container(
                     width: double.infinity,
                     height: 42,

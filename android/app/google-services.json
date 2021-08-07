@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "878419933688",
+    "project_id": "digitaltravelmoney-e5e2a",
+    "storage_bucket": "digitaltravelmoney-e5e2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878419933688:android:4f5692f767851f3a58fe0d",
+        "android_client_info": {
+          "package_name": "com.example.digitatravelmoney"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878419933688-ngr5b2u1seklcph6b1le7i85ja0le04e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.digitatravelmoney",
+            "certificate_hash": "5755802fd1be0877feabbc8a8d4ec34b9ef1899d"
+          }
+        },
+        {
+          "client_id": "878419933688-1be1nabgptlkkp01i7g2alg9h6j4j2mu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA-Miu0fmkdRbo6swfH0IR8iOdZAH3Cvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878419933688-1be1nabgptlkkp01i7g2alg9h6j4j2mu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

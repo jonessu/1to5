@@ -1,17 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:digitatravelmoney/Widget/text_widget.dart';
 import 'package:digitatravelmoney/screen/login_screen.dart';
+import 'package:flutter/services.dart';
+import 'package:local_auth/local_auth.dart';
 
-class onboardScreen extends StatelessWidget {
+class onboardScreen extends StatefulWidget {
   static const id = 'onboard_screen';
   const onboardScreen({Key? key}) : super(key: key);
 
   @override
+  _onboardScreenState createState() => _onboardScreenState();
+}
+
+class _onboardScreenState extends State<onboardScreen> {
+  // final LocalAuthentication auth = LocalAuthentication();
+
+  // void _authenticate() async {
+  //   bool _authenticated = false;
+  //   try {
+  //     _authenticated = await auth.authenticate(
+  //       localizedReason: 'Scan Your fingerprint to authenticate!',
+  //       useErrorDialogs: true,
+  //       stickyAuth: true,
+  //     );
+
+  //     print(_authenticated);
+  //   } on PlatformException catch (e) {
+  //     print(e.message);
+  //   }
+  //   if (_authenticated) {
+  //     Navigator.pushReplacement(
+  //         context, MaterialPageRoute(builder: (context) => login_Screen()));
+  //   }
+  // }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        color: Colors.white,
+      backgroundColor: Colors.white,
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -42,7 +69,7 @@ class onboardScreen extends StatelessWidget {
               height: 10,
             ),
             GestureDetector(
-              onTap: () {},
+              // onTap: _authenticate,
               child: Container(
                 width: 200,
                 height: 200,
