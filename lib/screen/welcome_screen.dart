@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:digitatravelmoney/screen/home_tab_screen.dart';
 import 'package:digitatravelmoney/screen/offers_tab_screen.dart';
 import 'package:digitatravelmoney/Widget/bottom_nav_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class welcomeScreen extends StatefulWidget {
   welcomeScreen({Key? key}) : super(key: key);
@@ -19,6 +20,23 @@ class _welcomeScreenState extends State<welcomeScreen> {
     offerstabScreen(),
     settingstabScreen(),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  void getCurrentUser() async {
+    try {
+      final user = await FirebaseAuth.instance.currentUser;
+      if (user != null) {
+        print(user.displayName);
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

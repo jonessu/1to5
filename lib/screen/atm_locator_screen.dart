@@ -10,9 +10,7 @@ class atmlocattorScreen extends StatefulWidget {
   atmlocattorScreenState createState() => atmlocattorScreenState();
 }
 
-
 class atmlocattorScreenState extends State<atmlocattorScreen> {
-
   Completer<GoogleMapController> _controller = Completer();
 
   final List _pages = [
@@ -20,16 +18,24 @@ class atmlocattorScreenState extends State<atmlocattorScreen> {
     {'title': 'Filters', 'widget': filterScreen()}
   ];
 
+  double latitude = 13.0827;
+  double longitude = 80.2707;
+
   @override
   void initState() {
     super.initState();
-    getLocation();
+    getCurrentLocation();
   }
 
-  void getLocation() async {
-    try{
-      final Position position = await Geolocator.getCurrentPosition();
-        }catch(e) {
+  void getCurrentLocation() async {
+    try {
+      Position position = await Geolocator.getCurrentPosition(
+          desiredAccuracy: LocationAccuracy.low);
+      setState(() {
+        latitude = position.latitude;
+        longitude = position.longitude;
+      });
+    } catch (e) {
       print(e);
     }
   }
@@ -297,7 +303,7 @@ class atmlocattorScreenState extends State<atmlocattorScreen> {
       child: GoogleMap(
         mapType: MapType.normal,
         initialCameraPosition:
-            CameraPosition(target: LatLng(13.0827, 80.2707), zoom: 15),
+            CameraPosition(target: LatLng(latitude, longitude), zoom: 15),
       ),
     );
   }

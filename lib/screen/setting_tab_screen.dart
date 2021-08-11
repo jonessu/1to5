@@ -14,7 +14,7 @@ class settingstabScreen extends StatefulWidget {
 }
 
 class _settingstabScreenState extends State<settingstabScreen> {
-  bool switch_value = true;
+  bool switch_value = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -211,7 +211,11 @@ class _settingstabScreenState extends State<settingstabScreen> {
                             Custom_Switch(
                               switch_value: switch_value,
                               switch_title: 'everything',
-                              onClicked: (bool newvalue) {},
+                              onClicked: (bool newvalue) {
+                                setState(() {
+                                  switch_value = newvalue;
+                                });
+                              },
                             ),
                             Divider(
                               height: 15.5,

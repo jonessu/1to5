@@ -2,8 +2,7 @@
     package="com.example.digitatravelmoney">
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
-    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
-   <application
+    <application
         android:label="digitatravelmoney"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
