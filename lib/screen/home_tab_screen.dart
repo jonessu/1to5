@@ -1,3 +1,4 @@
+import 'package:digitatravelmoney/screen/bloc_post_api_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:digitatravelmoney/Constant/transaction_list_constant.dart';
 import 'package:digitatravelmoney/screen/transactions_page_screen.dart';
@@ -72,6 +73,19 @@ class _hometabScreenState extends State<hometabScreen> {
                       ],
                     ),
                     SizedBox(height: 15),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => blocpostapiScreen()));
+                      },
+                      child: Text(
+                        "Click Me to Navigate Post_Api",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    SizedBox(height: 20),
                     Card(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),

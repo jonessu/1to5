@@ -1,5 +1,7 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:digitatravelmoney/bloc/post_bloc.dart';
 import 'package:digitatravelmoney/cubit/internet_cubit.dart';
+import 'package:digitatravelmoney/data/repositories/post_repo.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -23,16 +25,24 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key, required this.connectivity}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<InternetCubit>(
-      create: (context) => InternetCubit(connectivity: connectivity),
-      child: MaterialApp(
-        title: 'Splash Screen',
-        theme: ThemeData(
-          primarySwatch: Colors.green,
-        ),
-        debugShowCheckedModeBanner: false,
-        home: splashScreen(),
-      ),
-    );
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider<PostBloc>(
+            create: (BuildContext context) =>
+                PostBloc(InitialState(), PostRepository()),
+          ),
+          BlocProvider<InternetCubit>(
+            create: (BuildContext context) =>
+                InternetCubit(connectivity: connectivity),
+          ),
+        ],
+        child: MaterialApp(
+          title: 'Splash Screen',
+          theme: ThemeData(
+            primarySwatch: Colors.green,
+          ),
+          debugShowCheckedModeBanner: false,
+          home: splashScreen(),
+        ));
   }
 }

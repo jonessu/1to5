@@ -8,7 +8,6 @@ import 'package:digitatravelmoney/screen/welcome_screen.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:local_auth/local_auth.dart';
-
 import 'error_message_screen.dart';
 
 class onboardScreen extends StatefulWidget {
