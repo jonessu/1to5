@@ -2,7 +2,6 @@ part of 'post_bloc.dart';
 
 abstract class PostState extends Equatable {
   const PostState();
-
   @override
   List<Object> get props => [];
 }
@@ -10,6 +9,8 @@ abstract class PostState extends Equatable {
 class InitialState extends PostState {}
 
 class LoadingState extends PostState {}
+
+class LoadedState extends PostState {}
 
 class FetchSuccess extends PostState {
   late List<PostModel> posts;

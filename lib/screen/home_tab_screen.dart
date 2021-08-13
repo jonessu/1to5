@@ -1,4 +1,4 @@
-import 'package:digitatravelmoney/screen/bloc_post_api_screen.dart';
+import 'package:digitatravelmoney/screen/bloc_post_api_screen/bloc_post_api_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:digitatravelmoney/Constant/transaction_list_constant.dart';
 import 'package:digitatravelmoney/screen/transactions_page_screen.dart';

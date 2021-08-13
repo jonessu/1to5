@@ -17,7 +17,7 @@ Future<bool> googleSignInmethod() async {
 
     UserCredential result = await auth.signInWithCredential(credential);
 
-    User? user = await auth.currentUser;
+    User? user = auth.currentUser;
     print(user);
 
     return Future.value(true);

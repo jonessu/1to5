@@ -1,4 +1,4 @@
-import 'package:digitatravelmoney/screen/onboard_screen.dart';
+import 'package:digitatravelmoney/screen/onboard_screen/onboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 

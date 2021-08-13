@@ -1,7 +1,8 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:digitatravelmoney/bloc/post_bloc.dart';
+
 import 'package:digitatravelmoney/cubit/internet_cubit.dart';
 import 'package:digitatravelmoney/data/repositories/post_repo.dart';
+import 'package:digitatravelmoney/screen/bloc_post_api_screen/bloc/post_bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
