@@ -1,4 +1,5 @@
 import 'package:digitatravelmoney/screen/bloc_post_api_screen/bloc/post_bloc.dart';
+import 'package:digitatravelmoney/utils/color_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -48,15 +49,15 @@ class _blocpostapiScreenState extends State<blocpostapiScreen> {
                           children: [
                             ListTile(
                               title: Text(
-                                state.posts[i].title,
+                                state.posts[i].email,
                                 style: TextStyle(
-                                    color: Colors.black,
+                                    color: ColorResource.colorblack,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold),
                               ),
-                              subtitle: Text(state.posts[i].body,
+                              subtitle: Text(state.posts[i].company.toString(),
                                   style: TextStyle(
-                                      color: Colors.grey,
+                                      color: ColorResource.colorgrey,
                                       fontSize: 14,
                                       fontWeight: FontWeight.normal)),
                             ),

@@ -1,7 +1,11 @@
 import 'package:digitatravelmoney/screen/pin_verification_screen/bloc/pinverification_bloc.dart';
+import 'package:digitatravelmoney/utils/color_resource.dart';
+import 'package:digitatravelmoney/utils/fontFamily_resource.dart';
+import 'package:digitatravelmoney/utils/image_resource.dart';
+import 'package:digitatravelmoney/utils/string_resources.dart';
 import 'package:flutter/material.dart';
 import 'package:digitatravelmoney/Widget/text_widget.dart';
-import 'package:digitatravelmoney/screen/welcome_screen.dart';
+import 'package:digitatravelmoney/screen/welcome_screen/welcome_screen.dart';
 import 'package:email_auth/email_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -62,16 +66,16 @@ class _pinverificationScreenState extends State<pinverificationScreen> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Image.asset(
-                        'images/LogIn/logo_top.png',
+                        ImageResource.top_logo,
                         width: 151,
                         height: 70,
                       ),
                       SizedBox(height: 30),
                       Text_Widget(
-                        text: "Welcome aboard!",
+                        text: StringResource.Welcome_aboard,
                         font_size: 18,
-                        colour: Color(0xff1c1d22),
-                        font_family: 'Poppins-Regular',
+                        colour: ColorResource.color1c1d22,
+                        font_family: FontFamilyResource.PoppinsRegular,
                       ),
                       SizedBox(
                         height: 71,
@@ -81,10 +85,10 @@ class _pinverificationScreenState extends State<pinverificationScreen> {
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: Text_Widget(
-                            text: 'LOGIN PIN',
+                            text: StringResource.LOGIN_PIN,
                             font_size: 10,
-                            colour: Color(0xff9d9da9),
-                            font_family: 'Poppins-Medium',
+                            colour: ColorResource.color9d9da9,
+                            font_family: FontFamilyResource.PoppinsMedium,
                           ),
                         ),
                       ),
@@ -95,20 +99,29 @@ class _pinverificationScreenState extends State<pinverificationScreen> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
-                            color: Color(0xffb9b9bf),
+                            color: ColorResource.color9d9da9,
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: EdgeInsets.only(left: 15.0),
                           child: TextFormField(
                             controller: _otpcontroller,
                             keyboardType: TextInputType.number,
                             cursorColor: Colors.black,
                             decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: "Enter OTP",
+                              hintText: StringResource.Enter_OTP,
+                              hintStyle: TextStyle(
+                                color: ColorResource.color616267,
+                                fontSize: 13,
+                                fontFamily: FontFamilyResource.PoppinsMedium,
+                              ),
+                            ),
+                            style: TextStyle(
+                              fontSize: 13,
+                              color: ColorResource.color616267,
                             ),
                           ),
                         ),
@@ -126,15 +139,15 @@ class _pinverificationScreenState extends State<pinverificationScreen> {
                           width: double.infinity,
                           height: 42,
                           decoration: BoxDecoration(
-                            color: Color(0xff0066cc),
+                            color: ColorResource.color0066cc,
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Center(
                             child: Text_Widget(
-                              text: "Login",
+                              text: StringResource.Login,
                               font_size: 12,
                               colour: Colors.white,
-                              font_family: 'Poppins-SemiBold',
+                              font_family: FontFamilyResource.PoppinsSemiBold,
                             ),
                           ),
                         ),
@@ -143,10 +156,10 @@ class _pinverificationScreenState extends State<pinverificationScreen> {
                       GestureDetector(
                         onTap: () {},
                         child: Text_Widget(
-                          text: "forgot PIN?",
+                          text: StringResource.forgot_PIN,
                           font_size: 12,
-                          colour: Color(0xff616267),
-                          font_family: 'Poppins-SemiBold',
+                          colour: ColorResource.color616267,
+                          font_family: FontFamilyResource.PoppinsSemiBold,
                         ),
                       ),
                       SizedBox(height: 10),

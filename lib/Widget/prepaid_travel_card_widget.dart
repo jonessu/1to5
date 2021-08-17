@@ -1,3 +1,7 @@
+import 'package:digitatravelmoney/utils/color_resource.dart';
+import 'package:digitatravelmoney/utils/fontFamily_resource.dart';
+import 'package:digitatravelmoney/utils/image_resource.dart';
+import 'package:digitatravelmoney/utils/string_resources.dart';
 import 'package:flutter/material.dart';
 import 'package:digitatravelmoney/Widget/text_widget.dart';
 
@@ -23,7 +27,7 @@ class prepaid_travel_card_widget extends StatelessWidget {
             height: 31,
             width: 30,
             child: Image.asset(
-              "images/home/tab_1/$img_path.png",
+              "images/$img_path.png",
             ),
           ),
           SizedBox(width: 20),
@@ -37,23 +41,23 @@ class prepaid_travel_card_widget extends StatelessWidget {
                     Text_Widget(
                       text: money_value,
                       font_size: 11,
-                      font_family: 'Poppins-SemiBold',
-                      colour: Color(0xff9d9da9),
+                      font_family: FontFamilyResource.PoppinsSemiBold,
+                      colour: ColorResource.color9d9da9,
                     ),
                     SizedBox(width: 3),
                     Text_Widget(
                       text: text_title,
                       font_size: 14,
-                      font_family: 'Poppins-SemiBold',
-                      colour: Color(0xff1c1d22),
+                      font_family: FontFamilyResource.PoppinsSemiBold,
+                      colour: ColorResource.color1c1d22,
                     ),
                   ],
                 ),
                 Text_Widget(
-                  text: "USD",
+                  text: StringResource.USD,
                   font_size: 10,
-                  colour: Color(0xff616267),
-                  font_family: 'Poppins-Light',
+                  colour: ColorResource.color616267,
+                  font_family: FontFamilyResource.PoppinsLight,
                 ),
               ],
             ),
@@ -62,14 +66,14 @@ class prepaid_travel_card_widget extends StatelessWidget {
           Row(
             children: [
               Text_Widget(
-                text: "manage",
+                text: StringResource.manage,
                 font_size: 10,
-                colour: Color(0xff616267),
-                font_family: 'Poppins-Regular',
+                colour: ColorResource.color616267,
+                font_family: FontFamilyResource.PoppinsRegular,
               ),
               SizedBox(width: 10),
               Image.asset(
-                'images/home/tab_1/arrow_copy_4.png',
+                ImageResource.arrowcopy,
                 width: 6,
                 height: 11,
               ),

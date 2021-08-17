@@ -1,3 +1,6 @@
+import 'package:digitatravelmoney/utils/color_resource.dart';
+import 'package:digitatravelmoney/utils/fontFamily_resource.dart';
+import 'package:digitatravelmoney/utils/image_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:digitatravelmoney/Widget/text_widget.dart';
 
@@ -32,8 +35,8 @@ class offers_card_widget extends StatelessWidget {
               Text_Widget(
                 text: title,
                 font_size: 16,
-                colour: Color(0xff1c1d22),
-                font_family: 'Poppins-Medium',
+                colour: ColorResource.color1c1d22,
+                font_family: FontFamilyResource.PoppinsMedium,
               ),
               SizedBox(height: 5),
               Row(
@@ -42,12 +45,12 @@ class offers_card_widget extends StatelessWidget {
                   Text_Widget(
                     text: sub_text,
                     font_size: 13,
-                    colour: Color(0xff616267),
-                    font_family: 'Poppins-SemiBold',
+                    colour: ColorResource.color616267,
+                    font_family: FontFamilyResource.PoppinsSemiBold,
                   ),
                   SizedBox(width: 10),
                   Image.asset(
-                    'images/home/tab_1/arrow_copy_4.png',
+                    ImageResource.arrowcopy,
                     width: 6,
                     height: 11,
                   ),

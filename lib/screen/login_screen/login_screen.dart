@@ -1,8 +1,12 @@
 import 'package:digitatravelmoney/screen/login_screen/bloc/login_bloc.dart';
+import 'package:digitatravelmoney/utils/color_resource.dart';
+import 'package:digitatravelmoney/utils/fontFamily_resource.dart';
+import 'package:digitatravelmoney/utils/image_resource.dart';
+import 'package:digitatravelmoney/utils/string_resources.dart';
 import 'package:flutter/material.dart';
 import 'package:digitatravelmoney/Widget/text_widget.dart';
 import 'package:digitatravelmoney/screen/pin_verification_screen/pin_verification_screen.dart';
-import 'package:digitatravelmoney/screen/welcome_screen.dart';
+import 'package:digitatravelmoney/screen/welcome_screen/welcome_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -66,14 +70,14 @@ class _login_ScreenState extends State<login_Screen> {
               child: Container(
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height,
-                color: Colors.white,
+                color: ColorResource.colorwhite,
                 child: Padding(
                   padding: EdgeInsets.all(20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Image.asset(
-                        'images/LogIn/logo_top.png',
+                        ImageResource.top_logo,
                         width: 151,
                         height: 70,
                       ),
@@ -81,10 +85,10 @@ class _login_ScreenState extends State<login_Screen> {
                         height: 30,
                       ),
                       Text_Widget(
-                        text: "Get started by Logging in!",
+                        text: StringResource.Get_started_by_Logging_in,
                         font_size: 18,
-                        colour: Color(0xff1c1d22),
-                        font_family: 'Poppins-Regular',
+                        colour: ColorResource.color1c1d22,
+                        font_family: FontFamilyResource.PoppinsRegular,
                       ),
                       SizedBox(
                         height: 68,
@@ -94,10 +98,10 @@ class _login_ScreenState extends State<login_Screen> {
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: Text_Widget(
-                            text: 'CUSTOMER ID',
+                            text: StringResource.CUSTOMER_ID,
                             font_size: 10,
-                            colour: Color(0xff9d9da9),
-                            font_family: 'Poppins-Medium',
+                            colour: ColorResource.color9d9da9,
+                            font_family: FontFamilyResource.PoppinsMedium,
                           ),
                         ),
                       ),
@@ -106,22 +110,34 @@ class _login_ScreenState extends State<login_Screen> {
                         width: double.infinity,
                         height: 48,
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: ColorResource.colorwhite,
                           border: Border.all(
-                            color: Color(0xffb9b9bf),
+                            color: ColorResource.colorb9b9bf,
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: TextFormField(
-                            controller: _emailcontroller,
-                            keyboardType: TextInputType.emailAddress,
-                            cursorColor: Colors.black,
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hintText: "Enter Email",
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: TextFormField(
+                              controller: _emailcontroller,
+                              keyboardType: TextInputType.emailAddress,
+                              cursorColor: ColorResource.colorblack,
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: StringResource.Enter_Email,
+                                hintStyle: TextStyle(
+                                  color: ColorResource.color616267,
+                                  fontSize: 13,
+                                  fontFamily: FontFamilyResource.PoppinsMedium,
+                                ),
+                              ),
+                              style: TextStyle(
+                                fontSize: 13,
+                                color: ColorResource.color616267,
+                                fontFamily: FontFamilyResource.PoppinsMedium,
+                              ),
                             ),
                           ),
                         ),
@@ -132,10 +148,10 @@ class _login_ScreenState extends State<login_Screen> {
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: Text_Widget(
-                            text: 'PASSWORD',
+                            text: StringResource.PASSWORD,
                             font_size: 10,
-                            colour: Color(0xff9d9da9),
-                            font_family: 'Poppins-Medium',
+                            colour: ColorResource.color9d9da9,
+                            font_family: FontFamilyResource.PoppinsMedium,
                           ),
                         ),
                       ),
@@ -144,26 +160,31 @@ class _login_ScreenState extends State<login_Screen> {
                         width: double.infinity,
                         height: 48,
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: ColorResource.colorwhite,
                           border: Border.all(
-                            color: Color(0xffb9b9bf),
+                            color: ColorResource.colorb9b9bf,
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: EdgeInsets.only(left: 15.0),
                           child: TextFormField(
                             controller: _passcontroller,
-                            cursorColor: Colors.black,
+                            cursorColor: ColorResource.colorblack,
                             obscureText: true,
                             decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: "Enter Password",
+                              hintText: StringResource.Enter_Password,
+                              hintStyle: TextStyle(
+                                color: ColorResource.color616267,
+                                fontSize: 13,
+                                fontFamily: FontFamilyResource.PoppinsMedium,
+                              ),
                             ),
                             style: TextStyle(
                               fontSize: 13,
-                              color: Color(0xff616267),
+                              color: ColorResource.color616267,
                             ),
                           ),
                         ),
@@ -172,10 +193,10 @@ class _login_ScreenState extends State<login_Screen> {
                       Align(
                         alignment: Alignment.centerRight,
                         child: Text_Widget(
-                          text: 'Set/Forgot Password?',
+                          text: StringResource.Set_Forgot_Password,
                           font_size: 13,
-                          colour: Color(0xff1c1d22),
-                          font_family: 'Poppins-Medium',
+                          colour: ColorResource.color1c1d22,
+                          font_family: FontFamilyResource.PoppinsMedium,
                         ),
                       ),
                       SizedBox(height: 30),
@@ -187,15 +208,15 @@ class _login_ScreenState extends State<login_Screen> {
                           width: double.infinity,
                           height: 42,
                           decoration: BoxDecoration(
-                            color: Color(0xff0066cc),
+                            color: ColorResource.color0066cc,
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Center(
                             child: Text_Widget(
-                              text: "Login",
+                              text: StringResource.Login,
                               font_size: 12,
-                              colour: Colors.white,
-                              font_family: 'Poppins-SemiBold',
+                              colour: ColorResource.colorwhite,
+                              font_family: FontFamilyResource.PoppinsSemiBold,
                             ),
                           ),
                         ),
@@ -217,13 +238,14 @@ class _login_ScreenState extends State<login_Screen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(FontAwesomeIcons.google,
-                                    color: Colors.white),
+                                    color: ColorResource.colorwhite),
                                 SizedBox(width: 5),
                                 Text_Widget(
-                                  text: "Sign In With Gmail",
+                                  text: StringResource.Sign_With_Gmail,
                                   font_size: 12,
-                                  colour: Colors.white,
-                                  font_family: 'Poppins-SemiBold',
+                                  colour: ColorResource.colorwhite,
+                                  font_family:
+                                      FontFamilyResource.PoppinsSemiBold,
                                 ),
                               ],
                             ),
@@ -240,18 +262,19 @@ class _login_ScreenState extends State<login_Screen> {
                             text: TextSpan(
                               children: [
                                 TextSpan(
-                                  text: "By clicking login, you agree to our ",
+                                  text: StringResource
+                                      .By_clicking_login_you_agree_to_our,
                                   style: TextStyle(
-                                    color: Color(0xff616267),
+                                    color: ColorResource.color616267,
                                     fontSize: 10,
                                     letterSpacing: 0,
                                   ),
                                 ),
                                 TextSpan(
-                                  text: "Terms & Conditions.",
+                                  text: StringResource.TermsandConditions,
                                   style: TextStyle(
                                     decoration: TextDecoration.underline,
-                                    color: Color(0xff616267),
+                                    color: ColorResource.color616267,
                                     fontSize: 10,
                                     letterSpacing: 0,
                                   ),

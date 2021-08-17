@@ -1,13 +1,17 @@
 import 'package:digitatravelmoney/Constant/enum.dart';
 import 'package:digitatravelmoney/cubit/internet_cubit.dart';
-import 'package:digitatravelmoney/screen/loading_screen.dart';
+import 'package:digitatravelmoney/screen/loading_screen/loading_screen.dart';
+import 'package:digitatravelmoney/utils/color_resource.dart';
+import 'package:digitatravelmoney/utils/fontFamily_resource.dart';
+import 'package:digitatravelmoney/utils/image_resource.dart';
+import 'package:digitatravelmoney/utils/string_resources.dart';
 import 'package:flutter/material.dart';
 import 'package:digitatravelmoney/Widget/text_widget.dart';
 import 'package:digitatravelmoney/screen/login_screen/login_screen.dart';
-import 'package:digitatravelmoney/screen/welcome_screen.dart';
+import 'package:digitatravelmoney/screen/welcome_screen/welcome_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:local_auth/local_auth.dart';
-import '../error_message_screen.dart';
+import '../error_message_screen/error_message_screen.dart';
 
 class onboardScreen extends StatefulWidget {
   static const id = 'onboard_screen';
@@ -71,7 +75,7 @@ class _onboardScreenState extends State<onboardScreen> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Image.asset(
-            'images/LogIn/logo_top.png',
+            ImageResource.top_logo,
             width: 151,
             height: 70,
           ),
@@ -84,20 +88,20 @@ class _onboardScreenState extends State<onboardScreen> {
                   MaterialPageRoute(builder: (context) => welcomeScreen()));
             },
             child: Text_Widget(
-              text: "Get started by Logging in!",
+              text: StringResource.Get_started_by_Logging_in,
               font_size: 18,
-              colour: Color(0xff1c1d22),
-              font_family: 'Poppins-Regular',
+              colour: ColorResource.color1c1d22,
+              font_family: FontFamilyResource.PoppinsRegular,
             ),
           ),
           SizedBox(
             height: 91,
           ),
           Text_Widget(
-            text: "FINGERPRINT UNLOCK",
+            text: StringResource.FINGERPRINT_UNLOCK,
             font_size: 10,
-            colour: Color(0xff9d9da9),
-            font_family: 'Poppins-Medium',
+            colour: ColorResource.color9d9da9,
+            font_family: FontFamilyResource.PoppinsMedium,
           ),
           SizedBox(
             height: 10,
@@ -110,14 +114,14 @@ class _onboardScreenState extends State<onboardScreen> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
-                  color: Color(0xffb9b9bf),
+                  color: ColorResource.colorb9b9bf,
                   width: 1,
                 ),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Center(
                 child: Image.asset(
-                  'images/LogIn/fingerprint.png',
+                  ImageResource.fingerprint,
                   width: 80,
                   height: 80,
                 ),
@@ -128,10 +132,10 @@ class _onboardScreenState extends State<onboardScreen> {
             height: 30,
           ),
           Text_Widget(
-            text: "or",
+            text: StringResource.or,
             font_size: 13,
-            colour: Color(0xff616267),
-            font_family: 'Poppins-Regular',
+            colour: ColorResource.color616267,
+            font_family: FontFamilyResource.PoppinsRegular,
           ),
           SizedBox(
             height: 20,
@@ -142,10 +146,10 @@ class _onboardScreenState extends State<onboardScreen> {
                   MaterialPageRoute(builder: (context) => login_Screen()));
             },
             child: Text_Widget(
-              text: "Login with Customer ID",
+              text: StringResource.Login_with_Customer_ID,
               font_size: 13,
-              colour: Color(0xff1c1d22),
-              font_family: 'Poppins-Medium',
+              colour: ColorResource.color1c1d22,
+              font_family: FontFamilyResource.PoppinsMedium,
             ),
           ),
           SizedBox(

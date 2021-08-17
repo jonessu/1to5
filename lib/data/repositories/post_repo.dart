@@ -7,7 +7,7 @@ class PostRepository {
     List<PostModel> posts = [];
 
     var response =
-        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
+        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
     if (response.statusCode == 200) {
       var data = json.decode(response.body);
       data.map((post) => posts.add(PostModel.fromJson(post))).toList();

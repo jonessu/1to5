@@ -18,6 +18,7 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       yield LoadingState();
       try {
         var posts = await repo.fetchPosts();
+        print(posts);
         yield FetchSuccess(posts: posts);
       } catch (e) {
         yield ErrorState(message: e.toString());

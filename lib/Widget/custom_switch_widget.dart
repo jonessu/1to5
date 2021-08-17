@@ -1,3 +1,5 @@
+import 'package:digitatravelmoney/utils/color_resource.dart';
+import 'package:digitatravelmoney/utils/fontFamily_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -21,17 +23,19 @@ class Custom_Switch extends StatelessWidget {
         Text(
           switch_title,
           style: TextStyle(
-              color: Color(0xff1c1d22),
+              color: ColorResource.color1c1d22,
               fontSize: 13,
-              fontFamily: 'Poppins-Medium'),
+              fontFamily: FontFamilyResource.PoppinsMedium),
         ),
         Spacer(),
         SizedBox(
           width: 37,
           height: 22,
           child: CupertinoSwitch(
-            trackColor: Colors.grey,
-            activeColor: Colors.blue,
+            trackColor: ColorResource.colorgrey,
+            //Colors.grey,
+            activeColor: ColorResource.colorblue,
+            //Colors.blue,
             value: switch_value,
             onChanged: (newvalue) {
               onClicked(newvalue);

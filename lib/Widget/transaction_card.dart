@@ -1,30 +1,31 @@
+import 'package:digitatravelmoney/utils/color_resource.dart';
 import 'package:flutter/material.dart';
 
 class transaction_card extends StatelessWidget {
   const transaction_card(
       {Key? key,
       required this.title,
-      required this.subtitle,
-      required this.img_path,
-      required this.price_text})
+      required this.subTitle,
+      required this.imgPath,
+      required this.priceText})
       : super(key: key);
-  final String title, subtitle, img_path, price_text;
+  final String title, subTitle, imgPath, priceText;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-        side: BorderSide(color: Color(0xffe3e3e5), width: 1),
+        side: BorderSide(color: ColorResource.colore3e3e5, width: 1),
         borderRadius: BorderRadius.circular(10),
       ),
       child: ListTile(
         title: Text(
           title,
-          style: TextStyle(color: Color(0xff1c1d22), fontSize: 13),
+          style: TextStyle(color: ColorResource.color1c1d22, fontSize: 13),
         ),
         subtitle: Text(
-          subtitle,
-          style: TextStyle(color: Color(0xff9d9da9), fontSize: 14),
+          subTitle,
+          style: TextStyle(color: ColorResource.color9d9da9, fontSize: 14),
         ),
         leading: Container(
           width: 40,
@@ -32,15 +33,15 @@ class transaction_card extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16.0),
           ),
-          child: Image.asset(img_path),
+          child: Image.asset(imgPath),
         ),
         trailing: Wrap(
           spacing: 5, // space between two icons
           children: <Widget>[
             Text(
-              price_text,
+              priceText,
               style: TextStyle(
-                color: Color(0xff1c1d22),
+                color: ColorResource.color1c1d22,
                 fontSize: 13,
               ),
             ), // icon-1

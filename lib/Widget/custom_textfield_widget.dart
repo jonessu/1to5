@@ -4,17 +4,18 @@ import 'package:digitatravelmoney/Widget/text_widget.dart';
 class custom_text_field_widget extends StatelessWidget {
   const custom_text_field_widget({
     required this.text_title,
-    required this.hint_text,
     required this.font_size,
     required this.text_family,
     required this.colour,
+    required this.widget,
     Key? key,
   }) : super(key: key);
 
   final String text_title;
-  final String hint_text;
+
   final double font_size;
   final String text_family;
+  final Widget widget;
   final Color colour;
 
   @override
@@ -36,26 +37,7 @@ class custom_text_field_widget extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 48,
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: hint_text,
-                hintStyle: TextStyle(color: Colors.white),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                  borderSide: BorderSide(
-                    color: Color(0xff616267),
-                    width: 1,
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                  borderSide: BorderSide(
-                    color: Color(0xff616267),
-                    width: 1,
-                  ),
-                ),
-              ),
-            ),
+            child: widget,
           ),
         ],
       ),

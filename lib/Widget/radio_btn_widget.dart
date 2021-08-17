@@ -1,3 +1,5 @@
+import 'package:digitatravelmoney/utils/color_resource.dart';
+import 'package:digitatravelmoney/utils/fontFamily_resource.dart';
 import 'package:flutter/material.dart';
 
 class radio_btn_widget extends StatelessWidget {
@@ -21,9 +23,10 @@ class radio_btn_widget extends StatelessWidget {
       height: 49,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        color: Colors.white,
+        color: ColorResource.colorwhite,
         border: Border.all(
-          color: Color(0xffe3e3e5),
+          color: ColorResource.colore3e3e5,
+          //Color0xffe3e3e5),
           width: 1,
         ),
       ),
@@ -35,16 +38,17 @@ class radio_btn_widget extends StatelessWidget {
             Text(
               radio_title,
               style: TextStyle(
-                color: Color(0xff616267),
+                color: ColorResource.color616267,
+                //Color0xff616267),
                 fontSize: 13,
-                fontFamily: 'Poppins-Medium',
+                fontFamily: FontFamilyResource.PoppinsMedium,
               ),
             ),
             Spacer(),
             Radio(
               value: radio_value,
               groupValue: group_value,
-              activeColor: Colors.blue,
+              activeColor: ColorResource.colorblue,
               onChanged: (value) {
                 onChanged(value);
               },
